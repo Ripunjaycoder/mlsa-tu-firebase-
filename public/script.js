@@ -9,7 +9,7 @@ document.getElementById('registration-form').addEventListener('submit', async (e
     try {
         console.log("Submitting form with:", { name, email });
 
-        const response = await fetch('/api/submit-form', {
+        const response = await fetch('https://mlsatezpuruniversity.vercel.app/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, email })
