@@ -41,11 +41,20 @@ app.post('/api/submit-form', async (req, res) => {
 
     // Prepare the confirmation email
     const msg = {
-      to: email,
-      from: 'Ripunjay.Deka@studentambassadors.com',
-      subject: 'Thank you for registering!',
-      text: `Hello ${name}, thank you for registering with MLSA TU Chapter! Please visit https://mvp.microsoft.com/studentambassadors and join our WhatsApp group at https://chat.whatsapp.com/EbM3IMWPN1YI8OemScHKZ5 for future updates. Have a Great Day Ahead!`,
-    };
+    to: email,
+    from: 'Ripunjay.Deka@studentambassadors.com',
+    subject: 'Thank you for registering!',
+    html: `
+        <p>Hello <strong>${name}</strong>, thank you for registering with MLSA TU Chapter!</p>
+        <p>Please visit our 
+            <a href="https://mvp.microsoft.com/studentambassadors" target="_blank">Microsoft Student Ambassadors</a> page
+            and join our 
+            <a href="https://chat.whatsapp.com/EbM3IMWPN1YI8OemScHKZ5" target="_blank">WhatsApp group</a> for future updates.
+        </p>
+        <p>Have a Great Day Ahead!</p>
+    `,
+};
+
 
     // Send the confirmation email
     await sgMail.send(msg);
