@@ -4,6 +4,7 @@ import { getFirestore } from "firebase/firestore";
 
 // Firebase configuration
 const firebaseConfig = {
+  apiKey:="AIzaSyCNh_DsOHo0Xx66Bqur_Rp-vguLzyOEAAU",
   authDomain: "mlsa-tu.firebaseapp.com",
   projectId: "mlsa-tu",
   storageBucket: "mlsa-tu.appspot.com",
